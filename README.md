@@ -15,4 +15,15 @@ This project contains a simple Node.js/Express server and a web client for displ
    ```
    or start normally with `npm start`.
 
+### Offline sample data
+
+If access to external APIs is restricted, you can run the server with built-in
+sample responses. Set the `USE_MOCK` environment variable:
+
+```bash
+USE_MOCK=true npm start
+```
+
+This allows the dashboard to function without internet access.
+
 The client is served from `/client` and will be accessible at `http://localhost:3000` by default.

@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const wowauctions = require('../services/wowauctions');
-const turtleDB    = require('../services/turtleDB');
+const useMock = process.env.USE_MOCK === 'true';
+const wowauctions = useMock
+  ? require('../services/mockData')
+  : require('../services/wowauctions');
+const turtleDB = useMock
+  ? require('../services/mockData')
+  : require('../services/turtleDB');
 
 router.get('/', (req, res) => {
   console.log('Health check ping /api/ah/');
